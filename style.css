@@ -1,0 +1,133 @@
+:root {
+  --white: #fff;
+  --nameColor: #fff;
+  --listColor: #000;
+  --lineColor: rgba(0, 0, 0, 0.08);
+  --priceColor: #000;
+  --btnColor: #fffd38;
+  --gradient1: rgba(144, 115, 195, 1);
+  --gradient2: rgba(85, 117, 182, 1);
+  --buttonShadow: rgba(15, 52, 67, 0.5);
+  --boxShadow: rgba(0, 0, 0, 0.08);
+}
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  height: 100vh;
+  background: linear-gradient(90deg, var(--gradient1), var(--gradient2));
+  padding: 200px;
+}
+li {
+  list-style: none;
+  text-align: center;
+}
+
+.animals {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.cat,
+.dog,
+.fish {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 30px 30px 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0 20px 40px var(--boxShadow);
+}
+
+.name {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--nameColor);
+  margin: 10px;
+}
+p {
+  margin-top: 40px;
+  text-align: center;
+}
+ul {
+  margin-top: 20px;
+}
+li {
+  line-height: 40px;
+  color: var(--listColor);
+}
+hr {
+  border-bottom: 2px solid var(--lineColor);
+  border-right: 0;
+  border-top: 0;
+  border-left: 0;
+}
+.dog {
+  height: 550px;
+}
+.cat {
+  height: 490px;
+  position: relative;
+  right: 40px;
+}
+.fish {
+  height: 450px;
+  position: relative;
+  left: 40px;
+}
+.price {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: center;
+  color: var(--priceColor);
+}
+
+button {
+  min-width: 240px;
+  border: 1px solid var(--btnColor);
+  background: var(--btnColor);
+  padding: 15px 60px;
+  border-radius: 5px;
+  color: var(--listColor);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  cursor: pointer;
+  font-size: 15px;
+  transition: box-shadow 0.3s ease;
+}
+button:hover {
+  background: var(--white);
+  box-shadow: 0 8px 16px -5px var(--buttonShadow);
+  color: var(--listColor);
+  border: none;
+}
+@media screen and (max-width: 1060px) {
+  .container {
+    height: 100%;
+    padding: 30px;
+    background: linear-gradient(180deg, var(--gradient1), var(--gradient2));
+  }
+  .animals {
+    flex-direction: column;
+  }
+  .cat {
+    right: 0;
+    margin: 20px;
+  }
+  .fish {
+    left: 0;
+    margin: 20px;
+  }
+}
